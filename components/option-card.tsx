@@ -37,17 +37,20 @@ export function OptionCard({ title, description, details, badge, costLevel = "lo
 
   return (
     <div
-      className={`relative rounded-xl border-2 p-6 transition-all h-full flex flex-col ${styles.bg} ${
-        isSelected
-          ? `${styles.border} shadow-lg ring-2 ring-offset-2 ${
-              costLevel === "high" ? "ring-indigo-300" : costLevel === "mid" ? "ring-sky-300" : "ring-slate-300"
-            }`
-          : `${styles.border} hover:shadow-md`
-      }`}
+      className={`relative rounded-xl border-2 p-6 h-full flex flex-col
+        transition-all duration-300 ease-out
+        hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl
+        ${styles.bg} ${
+          isSelected
+            ? `${styles.border} shadow-lg ring-2 ring-offset-2 ${
+                costLevel === "high" ? "ring-indigo-300" : costLevel === "mid" ? "ring-sky-300" : "ring-slate-300"
+              }`
+            : `${styles.border} hover:border-primary/50 hover:shadow-primary/10`
+        }`}
     >
       {badge && (
         <span
-          className={`absolute -top-3 left-4 px-3 py-1 text-xs font-semibold rounded-full ${
+          className={`absolute -top-3 left-4 px-3 py-1 text-xs font-semibold rounded-full transition-transform duration-300 hover:scale-105 ${
             isSelected ? "bg-primary text-primary-foreground" : styles.badge
           }`}
         >
