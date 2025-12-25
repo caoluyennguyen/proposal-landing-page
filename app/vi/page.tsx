@@ -7,11 +7,8 @@ import { Check, Clock, Banknote } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 import { StaggeredCards } from "@/components/staggered-cards"
 import { Snowfall } from "@/components/snowfall"
-import { useTheme } from "next-themes"
 
 export default function VietnamesePage() {
-  const { theme } = useTheme()
-
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       {/* <Snowfall /> */}
