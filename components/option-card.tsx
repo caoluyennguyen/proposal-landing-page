@@ -14,22 +14,22 @@ interface OptionCardProps {
 export function OptionCard({ title, description, details, badge, costLevel = "low", isSelected }: OptionCardProps) {
   const costStyles = {
     low: {
-      bg: "bg-slate-50",
-      border: "border-slate-200",
+      bg: "bg-muted/50 dark:bg-muted/30",
+      border: "border-border",
       badge: "bg-slate-200 text-slate-700",
-      check: "text-slate-500",
+      check: "text-muted-foreground",
     },
     mid: {
-      bg: "bg-sky-50",
-      border: "border-sky-200",
+      bg: "bg-primary/5 dark:bg-primary/10",
+      border: "border-primary/30",
       badge: "bg-sky-200 text-sky-700",
-      check: "text-sky-500",
+      check: "text-primary",
     },
     high: {
-      bg: "bg-gradient-to-br from-indigo-50 to-purple-50",
-      border: "border-indigo-300",
+      bg: "bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20",
+      border: "border-primary/50",
       badge: "bg-indigo-200 text-indigo-700",
-      check: "text-indigo-500",
+      check: "text-primary",
     },
   }
 
@@ -42,9 +42,7 @@ export function OptionCard({ title, description, details, badge, costLevel = "lo
         hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl
         ${styles.bg} ${
           isSelected
-            ? `${styles.border} shadow-lg ring-2 ring-offset-2 ${
-                costLevel === "high" ? "ring-indigo-300" : costLevel === "mid" ? "ring-sky-300" : "ring-slate-300"
-              }`
+            ? `${styles.border} shadow-lg ring-2 ring-offset-2 ring-offset-background ring-primary/50`
             : `${styles.border} hover:border-primary/50 hover:shadow-primary/10`
         }`}
     >

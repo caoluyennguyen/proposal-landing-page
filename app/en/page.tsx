@@ -6,16 +6,17 @@ import { Button } from "@/components/ui/button"
 import { Check, Clock, Banknote } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 import { StaggeredCards } from "@/components/staggered-cards"
+import { Snowfall } from "@/components/snowfall"
 
 export default function EnglishPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      {/* <Snowfall /> */}
       <Header lang="en" />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-gradient-to-b from-muted/50 to-background overflow-hidden">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 md:py-28 bg-gradient-to-b from-muted/50 to-background dark:from-muted/20 overflow-hidden">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <AnimatedSection delay={0}>
               <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
                 Corporate Website Redesign Proposal
@@ -75,8 +76,7 @@ export default function EnglishPage() {
           </StaggeredCards>
         </Section>
 
-        {/* UI/UX Design Levels */}
-        <Section id="options" title="UI/UX Design Levels" className="bg-muted/30">
+        <Section id="options" title="UI/UX Design Levels" className="bg-muted/30 dark:bg-muted/10">
           <StaggeredCards className="grid md:grid-cols-3 gap-6">
             <OptionCard
               title="Clean & Modern"
@@ -123,8 +123,7 @@ export default function EnglishPage() {
           </StaggeredCards>
         </Section>
 
-        {/* Delivery Scope */}
-        <Section title="Delivery Scope" className="bg-muted/30">
+        <Section title="Delivery Scope" className="bg-muted/30 dark:bg-muted/10">
           <StaggeredCards className="grid md:grid-cols-3 gap-6">
             <OptionCard
               title="Handover & Deploy"
@@ -159,7 +158,7 @@ export default function EnglishPage() {
                   "Basic SEO",
                   "Responsive for all devices",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-card-foreground group">
+                  <li key={index} className="flex items-center gap-3 text-foreground group">
                     <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
                       <Check className="h-4 w-4 text-primary" />
                     </div>
@@ -172,13 +171,13 @@ export default function EnglishPage() {
         </Section>
 
         {/* Timeline & Pricing */}
-        <Section id="timeline" title="Timeline & Pricing" className="bg-muted/30">
+        <Section id="timeline" title="Timeline & Pricing" className="bg-muted/30 dark:bg-muted/10">
           <StaggeredCards className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto" staggerDelay={150}>
             <div className="bg-card border border-border rounded-xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 group">
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
                 <Clock className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">Estimated Completion</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Estimated Completion</h3>
               <p className="text-2xl font-bold text-primary">≤ 14 days</p>
               <p className="text-sm text-muted-foreground mt-2">after scope confirmation</p>
             </div>
@@ -189,7 +188,7 @@ export default function EnglishPage() {
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
                 <Banknote className="h-6 w-6 text-primary transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">Estimated Cost</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Estimated Cost</h3>
               <p className="text-2xl font-bold text-primary">From approx. 2.4M VND</p>
               <p className="text-sm text-muted-foreground mt-2">depending on options</p>
             </div>

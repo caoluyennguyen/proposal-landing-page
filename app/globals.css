@@ -39,6 +39,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* Added snowflake color for light theme */
+  --snowflake-color: oklch(0.6 0.15 250);
 }
 
 .dark {
@@ -75,6 +77,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  /* Added snowflake color for dark theme - bright white for visibility */
+  --snowflake-color: oklch(0.98 0 0);
 }
 
 @theme inline {
@@ -130,4 +134,34 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* Added holiday animations */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.animate-snowfall {
+  animation: snowfall linear infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 1s ease-in-out infinite;
 }
